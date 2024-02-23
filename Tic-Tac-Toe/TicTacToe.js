@@ -1,31 +1,42 @@
+// Turn Counter
 let Counter = 0
+// X and O win tracker
 let X = 0
 let O = 0
+
 function Clicker(box){
-    // console.log("hi")
+    // Determines the player Turn, and puts it into a booelan
     let playerTurn = (document.getElementById("Player").innerHTML == "Player: X") ? true : false
     let Player = document.getElementById("Player")
+    // gets the box that is clicked
     let boxer = document.getElementById(box)
-    // alert(playerTurn)
+    // Checks if the box has been clicked, if it has then it will not be clickable again
     if(boxer.innerHTML == ""){
+    // This is true, if its true then it would be an X, and it would change Player: to O, and then run the function to see if any wins occur
     if(playerTurn){
         boxer.innerHTML = "X"
         // boxer.innerHTML = "B";
         Player.innerHTML = "Player: O";
+
         winnerWinnerChickenDinner();
+        // adds to turn tracker, and updates it
         Counter++;
         document.getElementById("Turn").innerHTML = "Turn: " + Counter
     }
+    // If its false, then it will be Player O, who will do the same thing as above but with O
     else{
         boxer.innerHTML = "O"
         Player.innerHTML = "Player: X";
         winnerWinnerChickenDinner();
         Counter++;
         document.getElementById("Turn").innerHTML = "Turn: " + Counter
+
     }
 }
 }
+// Checks the winner
 function winnerWinnerChickenDinner() {
+    // this just makes it much simpler to go through every box to see if any won, and if it has it will go to index 1, and grab the full div so that it can highlight it.
     let boxes = [
        [document.getElementById("Box-Top-Left"),document.getElementById("Box-Top-left-Div")],
         [document.getElementById("Box-Top-Middle"),document.getElementById("Box-Top-Middle-Div")],
@@ -37,7 +48,7 @@ function winnerWinnerChickenDinner() {
         [document.getElementById("Box-Bottom-Middle"),document.getElementById("Box-Bottom-Middle-Div")],
         [document.getElementById("Box-Bottom-Right"),document.getElementById("Box-Bottom-Right-Div")],
     ];
-
+    // All the indexes the loop will go through
     const winCombos = [
         [0, 1, 2], 
         [3, 4, 5], 
@@ -48,20 +59,24 @@ function winnerWinnerChickenDinner() {
         [0, 4, 8],   
         [2, 4, 6]
     ];
-
+// Makes valueA, B, and C into the inside of each list inside the list.
     for (let x of winCombos) {
         let [a, b, c] = x;
         let valueA = boxes[a][0].innerHTML;
         let valueB = boxes[b][0].innerHTML;
         let valueC = boxes[c][0].innerHTML;
+    // If they all equal, then it means you won.
         
         if (valueA && valueA === valueB && valueB === valueC) {
 
             document.getElementById("Winner").innerHTML = "Winner: " + valueA;
+            // Makes it black
             document.getElementById("Winner").style.color="Black";
+            // Adds divs to class winning, whihc has a different color
             boxes[a][1].classList.add("winning");
             boxes[b][1].classList.add("winning");
             boxes[c][1].classList.add("winning");
+            // Makes it unclickable
             document.getElementById("Box").style.pointerEvents = "none";
             // alert(valueA);
             // alert(valueA)
@@ -71,15 +86,26 @@ function winnerWinnerChickenDinner() {
             else if(valueA == "O"){
                 O++;
             }
-            // else{
-            //     alert("hi")
-            // }
 
-        }
+
+        }      
+
+        // else{
+        //     alert("TIE")
+
+        // }
     }
+    // Checks if its tied
+    if (Counter == 8){
+        console.log("Tie")
+    } 
+    // else{
+
+    // }
 }
 
 function Reseter() {
+    // Puts everything back to default value
     document.getElementById("Box-Top-Left").innerHTML = "";
     document.getElementById("Box-Top-Middle").innerHTML = "";
     document.getElementById("Box-Top-Right").innerHTML = "";
@@ -105,26 +131,5 @@ function Reseter() {
     document.getElementById("Box").style.pointerEvents = "all";
     document.getElementById("X").innerHTML = "X: " + X;
     document.getElementById("O").innerHTML = "O: " +O;
-    // document.getElementById("Box-").classList.remove("winning");
-    // document.getElementById("Box-").classList.remove("winning");
-    // document.getElementById("Box-").classList.remove("winning");
 
 }
-// Counter = 7
-//     if(List[1]){
-//         console.log("hi")
-//     }
-//     // if (box1 == box2 && box2 == box3){
-//     //     console.log(box1);
-//     // }
-//     if (box4 == box5 && box5 == box6){
-//         console.log(box4);
-//     }
-//     if (box7 == box8 && box8 == box9){
-//         console.log(box7)
-//     }
-//     if(box1 == box5 && box5 == box9){
-//         console.log(box1)
-//     }
-
-// }
