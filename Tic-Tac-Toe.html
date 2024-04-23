@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Header">
+        <h1 id="Winner">TIC-TAC-TOE</h1>
+        <h3 id="Player">Player: X</h3>
+        <h3 id="Turn">Turn: </h3>
+    </div>
+    <div id="Box">
+        <div id="Box-Top-left-Div" onclick="Clicker('Box-Top-Left')" style="border-bottom: #EFDECD solid ; border-right: #EFDECD solid;"><h1 id="Box-Top-Left"></h1></div>
+        <div id="Box-Top-Middle-Div" onclick="Clicker('Box-Top-Middle')" style="border-bottom: #EFDECD solid; border-right: #EFDECD solid;"><h1 id="Box-Top-Middle"></h1></div>
+        <div id="Box-Top-Right-Div" onclick="Clicker('Box-Top-Right')" style="border-bottom: #EFDECD solid;"><h1 id="Box-Top-Right"></h1></div>
+        <div id="Box-Middle-Left-Div" onclick="Clicker('Box-Middle-Left')" style="border-right:#EFDECD solid; border-bottom: #EFDECD solid;"><h1 id="Box-Middle-Left"></h1></div>
+        <div id="Box-Middle-Middle-Div" onclick="Clicker('Box-Middle-Middle')" style="border-bottom: #EFDECD solid; border-right:#EFDECD solid;"><h1 id="Box-Middle-Middle"></h1></div>
+        <div id="Box-Middle-Right-Div" onclick="Clicker('Box-Middle-Right')" style="border-bottom: #EFDECD solid; "><h1 id="Box-Middle-Right"></h1></div>
+        <div id="Box-Bottom-Left-Div" onclick="Clicker('Box-Bottom-Left')" style="border-right:#EFDECD solid;"><h1 id="Box-Bottom-Left"></h1></div>
+        <div id="Box-Bottom-Middle-Div" onclick="Clicker('Box-Bottom-Middle')" style="border-right:#EFDECD solid;"><h1 id="Box-Bottom-Middle"></h1></div>
+        <div id="Box-Bottom-Right-Div" onclick="Clicker('Box-Bottom-Right')"><h1 id="Box-Bottom-Right"></h1></div>
+    </div>
+    <div class="Progress">
+        <h2>wins: </h2>
+        <div>
+            <h3 id="X">X: </h3>
+            <button onclick="Reseter()">RESET</button>
+            <h3 id="O">O: </h3>
+        </div>
+    </div>
+    <script src="TicTacToe.js"></script>
+</body>
+</html>

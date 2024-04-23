@@ -1,0 +1,62 @@
+body{
+    background-color: #A67B5B;
+    color:#EFDECD;
+
+}
+.Header{
+    margin: auto;
+    width: 45vw;
+    text-align: center;
+    
+}
+#Box{
+    margin: auto;
+    width: 35vw;
+    display: grid;
+    grid-template-columns: repeat(3 ,12vw);
+    grid-template-rows: repeat(3, 9vw);
+}
+#Box div{
+    text-align: center;
+    padding: 1.5vw 0px;
+    /* border: yellow solid; */
+
+}
+.Progress{
+    margin: auto;
+    width: 35vw;
+    text-align: center;
+}
+.Progress div{
+    justify-content:space-between;
+    display: flex;
+    /* margin-left: 50px;
+    padding-left: 5vw; */
+
+}
+button{
+    width: 20vw;
+}
+.winning{
+    background-color: burlywood;
+}
+
+#Box-Top-Left{
+    border-top: none ;
+    border-left: none;
+
+}
+#Box-Top-Middle{
+
+}
+#Box-Top-Right{
+}
+#Box-Middle-Left{
+
+}
+#Box-Middle-Middle{
+
+}
+#Box-Middle-Right{
+}
+
